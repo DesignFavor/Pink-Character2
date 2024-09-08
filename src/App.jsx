@@ -3,6 +3,8 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Character } from './Character'
 import { Environment } from '@react-three/drei'
+import { ACESFilmicToneMapping, PCFSoftShadowMap, MeshStandardMaterial, PlaneGeometry } from 'three'
+import { EffectComposer, SSAO, SSR } from '@react-three/postprocessing'
 
 
 
