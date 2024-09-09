@@ -2,9 +2,10 @@ import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Character } from './Character'
-import { Environment } from '@react-three/drei'
+import { Environment, ContactShadows } from '@react-three/drei'
 import { ACESFilmicToneMapping, PCFSoftShadowMap, MeshStandardMaterial, PlaneGeometry } from 'three'
-import { EffectComposer, SSAO, SSR } from '@react-three/postprocessing'
+import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
+
 
 
 
@@ -20,8 +21,17 @@ export default function App() {
     rotation={0}
     files="../public/ShowcaseEnvy.hdr"
     />
-<OrbitControls enableDamping dampingFactor={0.1} passive={true} PCFSoftShadowMap/>
+      <OrbitControls />
 
+
+        
+        <EffectComposer>
+  
+        <Bloom luminanceThreshold={0.7} luminanceSmoothing={1} />
+
+
+      </EffectComposer>
+     
       
       <Character/>
     </Canvas>

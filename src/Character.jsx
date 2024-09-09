@@ -52,4 +52,4 @@ export function Character(props) {
   )
 }
 
-useGLTF.preload('/Character-transformed.glb')
+useGLTF.preload('./model/Character-transformed.glb')
