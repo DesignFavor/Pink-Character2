@@ -20,7 +20,8 @@ export default function App() {
     rotation={0}
     files="../public/ShowcaseEnvy.hdr"
     />
-      <OrbitControls />
+<OrbitControls enableDamping dampingFactor={0.1} passive={true} PCFSoftShadowMap/>
+
       
       <Character/>
     </Canvas>
