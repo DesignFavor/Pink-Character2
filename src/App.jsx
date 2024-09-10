@@ -1,39 +1,34 @@
-import { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Character } from './Character'
 import { Environment, ContactShadows } from '@react-three/drei'
-import { ACESFilmicToneMapping, PCFSoftShadowMap, MeshStandardMaterial, PlaneGeometry } from 'three'
-import { Bloom, DepthOfField, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
-
-
+import { PlaneGeometry, MeshStandardMaterial } from 'three'
 
 
 export default function App() {
-  
   return (
-    <Canvas>
+    <Canvas shadows >
       <ambientLight intensity={0.2} />
-      <spotLight position={[10, 10, 10]} angle={0.5} penumbra={1} />
+      <directionalLight intensity={2} position={[-5, 5, 5]} castShadow shadow-mapSize={2048} shadow-bias={-0.0001} />
 
-    <Environment
-    background={0}
-    rotation={0}
-    files="../public/ShowcaseEnvy.hdr"
-    />
-      <OrbitControls />
+      {/* Environment setup */}
+      <Environment
+        background={0}
+        rotation={0}
+        files="../public/ShowcaseEnvy.hdr"
+      />
 
+      {/* Controls for Orbit */}
+      <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
 
-        
-        <EffectComposer>
-  
-        <Bloom luminanceThreshold={0.7} luminanceSmoothing={1} />
+      {/* Ground Plane */}
+      <mesh rotation={[-0.5 * Math.PI, 0, 0]} position={[0, -2, 0]} receiveShadow>
+        <planeGeometry args={[10, 10]} />
+        <shadowMaterial transparent opacity={0.50} />
+      </mesh>
 
-
-      </EffectComposer>
-     
-      
-      <Character/>
+      {/* Character model */}
+      <Character />
     </Canvas>
   )
 }

@@ -25,7 +25,7 @@ export function Character(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" rotation={[1.65, 0, 0]}>
+        <group name="Armature" rotation={[1.65, 0, 0]} position={[0, -2, 0]} scale={[2, 2, 2]}> 
           <primitive object={nodes.mixamorigHips} />
         </group>
         <skinnedMesh castShadow receiveShadow name="10294136_0" geometry={nodes['10294136_0'].geometry} material={materials['Material.005']} skeleton={nodes['10294136_0'].skeleton} rotation={[1.65, 0, 0]} />
