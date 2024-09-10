@@ -12,11 +12,12 @@ export default function App() {
       <directionalLight intensity={2} position={[-5, 5, 5]} castShadow shadow-mapSize={2048} shadow-bias={-0.0001} />
 
       {/* Environment setup */}
-      <Environment
-        background={0}
-        rotation={0}
-        files="../public/ShowcaseEnvy.hdr"
-      />
+<Environment
+  background={0}
+  rotation={0}
+  files="/ShowcaseEnvy.hdr"
+/>
+
 
       {/* Controls for Orbit */}
       <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
