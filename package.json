@@ -14,21 +14,24 @@
     "@react-three/drei": "^9.112.0",
     "@react-three/fiber": "^8.17.7",
     "@react-three/postprocessing": "^2.16.2",
+    "@studio-freight/lenis": "^1.0.42",
     "@types/three": "^0.148.0",
     "dat.gui": "^0.7.9",
     "drei": "^2.2.21",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
     "leva": "^0.9.35",
     "postprocessing": "^6.36.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "screen-space-reflections": "^2.5.0",
-    "three": "^0.160.0"
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-react-app": "^7.0.1",
@@ -40,5 +43,3 @@
     "vite": "^4.0.0"
   }
 }
-
-
